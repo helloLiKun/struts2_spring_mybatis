@@ -3,8 +3,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
     <display-name>struts2_spring_mybatis</display-name>
-    <!-- 配置spring监听listener
-              用于初始化Spring容器 -->
+    <!-- 配置spring监听listener用于初始化Spring容器 -->
     <listener>
         <listener-class>
             org.springframework.web.context.ContextLoaderListener
