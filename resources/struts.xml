@@ -3,6 +3,37 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
+    <package name="default" extends="struts-default" namespace="/">
+        <interceptors>
+            <interceptor name="loginInteceptor" class="com.struts.cn.interceptors.LoginInterceptor">
+            </interceptor>
+            <!-- 拦截器栈-->
+            <interceptor-stack name="myInteceptor">
+                <!-- struts默认执行的拦截器 -->
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="loginInteceptor">
+                    <param name="includeMethods">a</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <!-- 默认全局拦截器 -->
+        <!--<default-interceptor-ref name="myInteceptor"></default-interceptor-ref>-->
+
+        <action name="ua" class="userAction" method="b">
+            <interceptor-ref name="loginInteceptor"></interceptor-ref>
+            <result name="success">
+                /WEB-INF/msg.jsp
+            </result>
+        </action>
+
+        <action name="uu" class="userAction">
+            <result name="success">
+                /WEB-INF/msg.jsp
+            </result>
+        </action>
+    </package>
+
+
     <package name="u" namespace="/u" extends="struts-default">
         <action name="ua" class="userAction">
             <result name="success">

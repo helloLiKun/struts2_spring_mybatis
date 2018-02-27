@@ -20,6 +20,13 @@ public class UserAction {
         return "success";
     }
 
+    public void a(){
+        System.out.println("---------------a is invoke------------------");
+    }
+
+    public void b(){
+        System.out.println("---------------b is invoke------------------");
+    }
     @Resource
     UserService userService;
 }
